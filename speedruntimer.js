@@ -32,7 +32,7 @@ splits = document.createElement("div");
 stopwatch.appendChild(splits);
 
 updateClock = function() {
-    clock++;
+    clock += 10;
     clockDisp();
 };
 
@@ -47,7 +47,7 @@ document.addEventListener("keydown", function(e) {
     if (e.altKey) {
         clock = 0;
         splits.innerHTML = "";
-        mainLoop = setInterval(updateClock, 1);
+        mainLoop = setInterval(updateClock, 10);
     }
     else if (e.shiftKey) {
         splitText = document.createElement("div");
