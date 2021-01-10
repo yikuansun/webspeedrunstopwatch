@@ -33,8 +33,15 @@ stopwatch.appendChild(splits);
 
 updateClock = function() {
     clock++;
-    time.innerHTML = clock / 1000;
+    clockDisp();
 };
+
+clockDisp = function() {
+    s = (clock / 1000) % 60;
+    m = (clock / 1000) - s;
+    s_display = (s < 10)?"0"+s.toString():s.toString();
+    time.innerHTML = m.toString() + ":" + s_display;
+}
 
 document.addEventListener("keydown", function(e) {
     if (e.altKey) {
@@ -44,7 +51,7 @@ document.addEventListener("keydown", function(e) {
     }
     else if (e.shiftKey) {
         splitText = document.createElement("div");
-        splitText.innerHTML = clock / 1000;
+        splitText.innerHTML = time.innerText;
         splitText.style.color = scheme[3];
         splitText.style.marginLeft = "12px";
         splitText.style.marginTop = "2px";
