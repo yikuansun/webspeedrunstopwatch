@@ -31,10 +31,10 @@ stopwatch.appendChild(time);
 splits = document.createElement("div");
 stopwatch.appendChild(splits);
 
-setInterval(function() {
+updateClock = function() {
     clock++;
     time.innerHTML = clock / 1000;
-}, 1);
+};
 
 document.addEventListener("keydown", function(e) {
     if (e.altKey) {
@@ -47,6 +47,10 @@ document.addEventListener("keydown", function(e) {
         else if (e.keyCode == 82) {
             clock = 0;
             splits.innerHTML = "";
+            mainLoop = setInterval(updateClock, 1);
+        }
+        else if (e.keyCode == 81) {
+            clearInterval(mainLoop);
         }
         e.preventDefault();
     }
