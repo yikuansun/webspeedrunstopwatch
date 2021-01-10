@@ -19,7 +19,7 @@ stopwatch.appendChild(decobar);
 
 time = document.createElement("div");
 clock = 0;
-time.innerHTML = clock / 1000;
+time.innerHTML = "0:00";
 time.style.fontFamily = "Arial";
 time.style.color = scheme[4];
 time.style.marginTop = "5px";
