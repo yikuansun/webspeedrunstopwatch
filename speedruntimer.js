@@ -44,24 +44,26 @@ clockDisp = function() {
 };
 
 document.addEventListener("keydown", function(e) {
-    if (e.altKey) {
-        clock = 0;
-        splits.innerHTML = "";
-        mainLoop = setInterval(updateClock, 10);
-        e.preventDefault();
-    }
-    else if (e.shiftKey) {
-        splitText = document.createElement("div");
-        splitText.innerHTML = time.innerText;
-        splitText.style.color = scheme[3];
-        splitText.style.marginLeft = "12px";
-        splitText.style.marginTop = "2px";
-        splitText.style.marginBottom = "2px";
-        splits.appendChild(splitText);
-        e.preventDefault();
-    }
-    else if (e.ctrlKey) {
-        clearInterval(mainLoop);
-        e.preventDefault();
+    if (!e.repeat) {
+        if (e.altKey) {
+            clock = 0;
+            splits.innerHTML = "";
+            mainLoop = setInterval(updateClock, 10);
+            e.preventDefault();
+        }
+        else if (e.shiftKey) {
+            splitText = document.createElement("div");
+            splitText.innerHTML = time.innerText;
+            splitText.style.color = scheme[3];
+            splitText.style.marginLeft = "12px";
+            splitText.style.marginTop = "2px";
+            splitText.style.marginBottom = "2px";
+            splits.appendChild(splitText);
+            e.preventDefault();
+        }
+        else if (e.ctrlKey) {
+            clearInterval(mainLoop);
+            e.preventDefault();
+        }
     }
 }, false);
