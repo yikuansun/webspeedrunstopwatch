@@ -1,5 +1,7 @@
 scheme = ["#141414", "#002F63", "#003D82", "#0C53A6", "#2B6ABC"];
 
+keyHeld = false;
+
 stopwatch = document.createElement("stopwatch");
 stopwatch.style.backgroundColor = "black";
 stopwatch.style.color = scheme[0];
@@ -44,6 +46,7 @@ clockDisp = function() {
 };
 
 document.addEventListener("keydown", function(e) {
+    if (keyHeld) return;
     if (e.altKey) {
         clock = 0;
         splits.innerHTML = "";
@@ -64,4 +67,8 @@ document.addEventListener("keydown", function(e) {
         clearInterval(mainLoop);
         e.preventDefault();
     }
+}, false);
+
+document.addEventListener("keyup", function(e) {
+    keyHeld = false;
 }, false);
