@@ -8,7 +8,7 @@ stopwatch.style.color = scheme[0];
 stopwatch.style.position = "fixed";
 stopwatch.style.width = "250px";
 stopwatch.style.height = "400px";
-stopwatch.style.zIndex = "420";
+stopwatch.style.zIndex = "6969";
 stopwatch.style.top = "0";
 stopwatch.style.right = "0";
 document.body.appendChild(stopwatch);
