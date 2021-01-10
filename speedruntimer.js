@@ -1,5 +1,7 @@
 scheme = ["#141414", "#002F63", "#003D82", "#0C53A6", "#2B6ABC"];
 
+AltToStartClock = true;
+
 stopwatch = document.createElement("stopwatch");
 stopwatch.style.backgroundColor = "black";
 stopwatch.style.color = scheme[0];
@@ -46,9 +48,17 @@ clockDisp = function() {
 document.addEventListener("keydown", function(e) {
     if (!e.repeat) {
         if (e.altKey) {
-            clock = 0;
-            splits.innerHTML = "";
-            mainLoop = setInterval(updateClock, 10);
+            if (AltToStartClock) {
+                clock = 0;
+                splits.innerHTML = "";
+                mainLoop = setInterval(updateClock, 10);
+                AltToStartClock = false;
+            }
+            else {
+                clearInterval(mainLoop);
+                e.preventDefault();
+                AltToStartClock = true;
+            }
             e.preventDefault();
         }
         else if (e.shiftKey) {
@@ -59,10 +69,6 @@ document.addEventListener("keydown", function(e) {
             splitText.style.marginTop = "2px";
             splitText.style.marginBottom = "2px";
             splits.appendChild(splitText);
-            e.preventDefault();
-        }
-        else if (e.ctrlKey) {
-            clearInterval(mainLoop);
             e.preventDefault();
         }
     }
