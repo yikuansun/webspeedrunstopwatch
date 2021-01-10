@@ -48,6 +48,7 @@ document.addEventListener("keydown", function(e) {
         clock = 0;
         splits.innerHTML = "";
         mainLoop = setInterval(updateClock, 10);
+        e.preventDefault();
     }
     else if (e.shiftKey) {
         splitText = document.createElement("div");
@@ -57,9 +58,10 @@ document.addEventListener("keydown", function(e) {
         splitText.style.marginTop = "2px";
         splitText.style.marginBottom = "2px";
         splits.appendChild(splitText);
+        e.preventDefault();
     }
     else if (e.ctrlKey) {
         clearInterval(mainLoop);
+        e.preventDefault();
     }
-    e.preventDefault();
 }, false);
