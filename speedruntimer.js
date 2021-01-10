@@ -46,6 +46,9 @@ document.addEventListener("keydown", function(e) {
         splitText = document.createElement("div");
         splitText.innerHTML = clock / 1000;
         splitText.style.color = scheme[3];
+        splitText.style.marginLeft = "12px";
+        splitText.style.marginTop = "2px";
+        splitText.style.marginBottom = "2px";
         splits.appendChild(splitText);
     }
     else if (e.ctrlKey) {
