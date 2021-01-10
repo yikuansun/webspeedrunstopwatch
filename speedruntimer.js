@@ -37,7 +37,7 @@ updateClock = function() {
 };
 
 clockDisp = function() {
-    s = (clock / 1000) % 60;
+    s = clock % 60000 * 1000;
     m = Math.floor(clock / 60000);
     s_display = (s < 10)?("0"+s.toString()):(s.toString());
     time.innerHTML = m.toString() + ":" + s_display;
