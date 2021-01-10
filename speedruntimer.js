@@ -38,20 +38,18 @@ updateClock = function() {
 
 document.addEventListener("keydown", function(e) {
     if (e.altKey) {
-        if (e.keyCode == 83) {
-            splitText = document.createElement("div");
-            splitText.innerHTML = clock / 1000;
-            splitText.style.color = scheme[3];
-            splits.appendChild(splitText);
-        }
-        else if (e.keyCode == 82) {
-            clock = 0;
-            splits.innerHTML = "";
-            mainLoop = setInterval(updateClock, 1);
-        }
-        else if (e.keyCode == 81) {
-            clearInterval(mainLoop);
-        }
-        e.preventDefault();
+        clock = 0;
+        splits.innerHTML = "";
+        mainLoop = setInterval(updateClock, 1);
     }
+    else if (e.shiftKey) {
+        splitText = document.createElement("div");
+        splitText.innerHTML = clock / 1000;
+        splitText.style.color = scheme[3];
+        splits.appendChild(splitText);
+    }
+    else if (e.ctrlKey) {
+        clearInterval(mainLoop);
+    }
+    e.preventDefault();
 }, false);
