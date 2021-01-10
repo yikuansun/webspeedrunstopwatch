@@ -1,0 +1,12 @@
+Bookmark <a>Speedrun stopwatch</a>
+<h1>Controls</h1>
+    Alt/Option + R - start run <br />
+    Alt/Option + S - record split <br />
+    Alt/Option + Q - stop run
+<script>
+    request = new XMLHttpRequest();
+    request.open('GET', "https://webspeedrunstopwatch.netlify.app/speedruntimer.js", false);
+    request.send();
+
+    document.getElementsByTagName("a")[0].href = "javascript:" + request.responseText;
+</script>
