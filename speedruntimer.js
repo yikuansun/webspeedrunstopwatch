@@ -3,7 +3,7 @@ scheme = ["#141414", "#002F63", "#003D82", "#0C53A6", "#2B6ABC"];
 AltToStartClock = true;
 
 stopwatch = document.createElement("stopwatch");
-stopwatch.style.backgroundColor = "black";
+stopwatch.style.backgroundImage = "url('https://webspeedrunstopwatch.netlify.app/bg_translucent.png')";
 stopwatch.style.color = scheme[0];
 stopwatch.style.position = "fixed";
 stopwatch.style.width = "250px";
@@ -22,7 +22,7 @@ stopwatch.appendChild(decobar);
 time = document.createElement("div");
 clock = 0;
 time.innerHTML = "0:00";
-time.style.fontFamily = "Arial";
+time.style.fontFamily = "Trebuchet MS";
 time.style.color = scheme[4];
 time.style.marginTop = "5px";
 time.style.marginLeft = "10px";
@@ -65,6 +65,8 @@ document.addEventListener("keydown", function(e) {
             splitText = document.createElement("div");
             splitText.innerHTML = time.innerText;
             splitText.style.color = scheme[3];
+            splitText.style.fontSize = "18px";
+            splitText.style.fontFamily = "Trebuchet MS";
             splitText.style.marginLeft = "12px";
             splitText.style.marginTop = "2px";
             splitText.style.marginBottom = "2px";
