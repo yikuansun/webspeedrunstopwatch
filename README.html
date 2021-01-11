@@ -11,7 +11,7 @@ Drag <a>Speedrun stopwatch</a> to bookmarks bar
     document.getElementsByTagName("a")[0].href = "javascript:" + request.responseText;
 
     document.getElementById("colorrange").oninput = function() {
-        document.getElementsByTagName("a")[0].href = request.responseText.replace("hue-rotate(0", "hue-rotate(" + this.value.toString());
+        document.getElementsByTagName("a")[0].href = "javascript:" + request.responseText.replace("hue-rotate(0", "hue-rotate(" + this.value.toString());
         document.getElementById("colordisp").style.filter = "hue-rotate(" + this.value.toString() + "deg)";
     }
 </script>
