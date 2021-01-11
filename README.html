@@ -1,4 +1,5 @@
 Drag <a>Speedrun stopwatch</a> to bookmarks bar
+<br /> Color: <span id="colordisp" style="background-color: #002F63;">        </span> <input id="colorrange" type="range" min="0" max="360" />
 <h1>Controls</h1>
     Alt/Option - start / stop / restart run <br />
     Shift - record split <br />
@@ -8,4 +9,9 @@ Drag <a>Speedrun stopwatch</a> to bookmarks bar
     request.send();
 
     document.getElementsByTagName("a")[0].href = "javascript:" + request.responseText;
+
+    document.getElementById("colorrange").oninput = function() {
+        document.getElementsByTagName("a")[0].href.replace("hue-rotate(0", "hue-rotate(" + this.value.toString());
+        document.getElementById("colordisp").style.filter = "hue-rotate(" + this.value.toString() + "deg)";
+    }
 </script>

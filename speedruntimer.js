@@ -11,6 +11,7 @@ stopwatch.style.height = "400px";
 stopwatch.style.zIndex = "6969";
 stopwatch.style.top = "0";
 stopwatch.style.right = "0";
+stopwatch.style.filter = "hue-rotate(0deg)";
 document.body.appendChild(stopwatch);
 
 decobar = document.createElement("div");
