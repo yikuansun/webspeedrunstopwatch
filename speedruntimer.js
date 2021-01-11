@@ -65,7 +65,7 @@ document.addEventListener("keydown", function(e) {
             splitText = document.createElement("div");
             splitText.innerHTML = time.innerText;
             splitText.style.color = scheme[3];
-            splitText.style.fontSize = "18px";
+            splitText.style.fontSize = "24px";
             splitText.style.fontFamily = "Trebuchet MS";
             splitText.style.marginLeft = "12px";
             splitText.style.marginTop = "2px";
